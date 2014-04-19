@@ -26,7 +26,7 @@ import shutil
 from htpc.root import do_restart
 
 # configure git repo
-gitUser =  'styxit'
+gitUser =  'davidpearce'
 gitRepo = 'HTPC-Manager'
 gitBranch = 'master'
 
