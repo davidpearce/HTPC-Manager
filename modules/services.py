@@ -53,11 +53,10 @@ class Services:
     
     @cherrypy.expose()
     def deletewatchedplex(self, *args):
-        #must be S, D IN THAT ORDER
-        S = args[0]
-        D = args[1]
+        D = args[0]
+        library = htpc.settings.get('libraryID', '')
         import subprocess
-        temp = subprocess.check_output("python /opt/autodelete.py -i 192.168.0.53 -d " + D + " -s " + S, shell=True)
+        temp = subprocess.check_output("python /opt/autodelete.py -i 192.168.0.53 -d " + D + " -s " + library, shell=True)
         output = temp.replace("\n", "<br />")
         return output
     
