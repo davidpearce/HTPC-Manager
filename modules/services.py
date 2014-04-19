@@ -19,7 +19,13 @@ logger = logging.getLogger('modules.services')
 class Services:
     def __init__(self):
         self.logger = logging.getLogger('modules.stats')
-    
+        htpc.MODULES.append({
+                'name': 'Misc Services',
+                'id': 'services',
+                'fields': [
+                    {'type': 'bool', 'label': 'Enable', 'name': 'services_enable'},
+                    {'type': 'text', 'label': 'Menu name', 'name': 'services_name'}
+        ]})
     
     @cherrypy.expose()
     def index(self):
