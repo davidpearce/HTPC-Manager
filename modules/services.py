@@ -18,13 +18,15 @@ logger = logging.getLogger('modules.services')
 
 class Services:
     def __init__(self):
-        self.logger = logging.getLogger('modules.stats')
+        self.logger = logging.getLogger('modules.services')
         htpc.MODULES.append({
                 'name': 'Misc Services',
                 'id': 'services',
                 'fields': [
                     {'type': 'bool', 'label': 'Enable', 'name': 'services_enable'},
-                    {'type': 'text', 'label': 'Menu name', 'name': 'services_name'}
+                    {'type': 'text', 'label': 'Menu name', 'name': 'services_name'},
+                    {'type': 'text', 'label': 'Plex IP / Host *', 'name': 'plex_host'},
+                    {'type': 'text', 'label': 'Library # *', 'name': 'libraryID'}
         ]})
     
     @cherrypy.expose()
@@ -42,8 +44,10 @@ class Services:
     
     @cherrypy.expose()
     def outputwatchedplex(self):
+        host = htpc.settings.get('plex_host','')
+        library = htpc.settings.get('libraryID', '')
         import subprocess
-        temp = subprocess.check_output("python /opt/autodelete.py -i 192.168.0.53 -s 2", shell=True)
+        temp = subprocess.check_output("python /opt/autodelete.py -i "+ host + " -s " + library, shell=True)
         output = temp.replace("\n", "<br />")
         return output
     
