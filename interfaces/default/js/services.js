@@ -6,6 +6,7 @@
 setInterval(function () {
     //get_diskinfo();
     reloadtab();
+    alert ("interval");
 }, 10000);
 
 
@@ -32,6 +33,7 @@ function reloadtab() {
         get_watchedshows();
     } else if ($('#iotop').is(':visible')) {
         get_iotop();
+        alert("iotop reload tab");
     }
 }
 
