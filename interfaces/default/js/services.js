@@ -5,7 +5,9 @@
 // Set timeintercal to refresh stats
 setInterval(function () {
     //get_diskinfo();
-    reloadtab();
+    if ($('#iotop').is(':visible')) {
+        get_iotop();
+    }
 }, 1000);
 
 
