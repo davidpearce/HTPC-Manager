@@ -6,15 +6,13 @@
 setInterval(function () {
     //get_diskinfo();
     reloadtab();
-    alert ("interval");
-}, 10000);
+}, 1000);
 
 
 
 
 $(document).ready(function () {
     $('.spinner').show();
-    alert ("doc ready");
 });
 
 function get_watchedshows() {
@@ -34,7 +32,6 @@ function reloadtab() {
         get_watchedshows();
     } else if ($('#iotop').is(':visible')) {
         get_iotop();
-        alert("iotop reload tab");
     }
 }
 
