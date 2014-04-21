@@ -84,7 +84,6 @@ function get_diskinfo() {
 
 //Makes the process table
 function processes() {
-    alert("inside processes");
     $.ajax({
         'url': WEBDIR + 'stats/processes',
         'dataType': 'json' ,
