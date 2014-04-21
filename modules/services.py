@@ -70,6 +70,7 @@ class Services:
     def getiotop(self):
         import subprocess
         temp = subprocess.check_output("iotop -o -n 1 -b", shell=True)
-        temp2 = temp.replace("\n", "<br />")
-        output = "<table><tr><td>" + re.sub(' +',' ',temp2).replace(" ", "</td><td>") + "</td></tr></table>"
+        #temp2 = temp.replace("\n", "<br />")
+        temp2 = "<table><tr><td>" + re.sub(' +',' ',temp).replace(" ", "</td><td>") + "</td></tr></table>"
+        output = temp2.replace("\n", "<br/>")
         return output
