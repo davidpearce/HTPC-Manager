@@ -69,5 +69,5 @@ class Services:
     def getiotop(self):
         import subprocess
         temp = subprocess.check_output("iotop -o -n 1 -b", shell=True)
-        output = temp.replace("\n", "<br />")
+        output = "<table><tr><td>" + temp.replace("\n", "<br />").replace("\t", </td><td>") + "</td></tr></table>"
         return output
