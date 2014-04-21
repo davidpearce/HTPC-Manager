@@ -68,6 +68,6 @@ class Services:
     @cherrypy.expose()
     def getiotop(self):
         import subprocess
-        temp = subprocess.check_output("iotop -o", shell=True)
+        temp = subprocess.check_output("iotop -o -n 1 -b", shell=True)
         output = temp.replace("\n", "<br />")
         return output
