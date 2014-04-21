@@ -72,5 +72,5 @@ class Services:
         temp = subprocess.check_output("iotop -o -n 1 -b", shell=True)
         #temp2 = temp.replace("\n", "<br />")
         temp2 = "<table><tr><td>" + re.sub(' +',' ',temp).replace(" ", "</td><td>") + "</td></tr></table>"
-        output = temp2.replace("\n", "<br/>").replace("<br/></td>", "</td></tr><tr>")
+        output = temp2.replace("\n", "<br/>").replace("<br/></td>", "</td></tr><tr>").replace("</td><td>M/s", "M/s").replace("</td><td>K/s","K/s").replace("</td><td>B/s","B/s")
         return output
