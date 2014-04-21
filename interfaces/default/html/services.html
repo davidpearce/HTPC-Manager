@@ -24,6 +24,7 @@ webdir = htpc.WEBDIR
         <ul class="nav nav-tabs">
             <li><a href="#serv" data-toggle="tab">Services</a></li>
             <li><a href="#watched" data-toggle="tab" onclick="get_watchedshows();">Watched Episodes</a></li>
+            <li><a href="#iotop" data-toggle="tab" onclick="get_iotop();">Disk Usage</a></li>
         </ul>
 
         <div class="tab-content">
@@ -55,6 +56,22 @@ webdir = htpc.WEBDIR
                     <tr>
                         <td>
                             <div id="watchedshows"></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="iotop" class="tab-pane">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Disk Usage</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div id="iotop"></div>
                         </td>
                     </tr>
                     </tbody>
