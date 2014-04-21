@@ -64,3 +64,10 @@ class Services:
     @cherrypy.expose()
     def echo(self, *args, **kwargs):
         return args[0]
+
+    @cherrypy.expose()
+    def getiotop(self):
+        import subprocess
+        temp = subprocess.check_output("iotop -o", shell=True)
+        output = temp.replace("\n", "<br />")
+        return output
