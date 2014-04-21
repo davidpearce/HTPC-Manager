@@ -14,6 +14,7 @@ setInterval(function () {
 
 $(document).ready(function () {
     $('.spinner').show();
+    alert ("doc ready");
 });
 
 function get_watchedshows() {
