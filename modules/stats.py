@@ -47,7 +47,7 @@ class Stats:
         else:
             self.logger.error("Psutil is outdated, needs atleast version 0,7")
 
-        return htpc.LOOKUP.get_template('stats.html').render(scriptname='stats', importPsutil=importPsutil, cmdline=htpc.SHELL)
+        return htpc.LOOKUP.get_template('stats.html').render(scriptname='stats', importPsutil=importPsutil, cmdline=htpc.shell)
 
     @cherrypy.expose()
     def uptime(self):
