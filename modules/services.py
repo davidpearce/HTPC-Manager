@@ -71,6 +71,6 @@ class Services:
         import subprocess
         temp = subprocess.check_output("iotop -o -n 1 -b", shell=True)
         #temp2 = temp.replace("\n", "</table><br/><table>")
-        temp2 = "<table border='1'><tr><td>" + re.sub(' +',' ',temp).replace(" ", "</td><td>") + "</td></tr></table>"
+        temp2 = "<table border='1' style='white-space:nowrap;'><tr><td>" + re.sub(' +',' ',temp).replace(" ", "</td><td>") + "</td></tr></table>"
         output = temp2.replace("\n", "<br/>").replace("<br/></td>", "</td></tr><tr>").replace("</td><td>M/s", "M/s").replace("</td><td>K/s","K/s").replace("</td><td>B/s","B/s").replace("DISK</td><td>WRITE", "Disk Write").replace("DISK</td><td>READ", "Disk Read").replace("</td><td>%", "%").replace("Total</td><td>Disk", "Total Disk")
         return output
