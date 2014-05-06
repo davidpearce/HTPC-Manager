@@ -19,13 +19,13 @@ $(document).ready(function () {
 
 function get_watchedshows() {
     $.get(WEBDIR + 'services/outputwatchedplex', function (response) {
-        $('#watched').html(response);
+        $('#watcheddata').html(response);
     });
 }
 
 function get_iotop() {
     $.get(WEBDIR + 'services/getiotop', function (response) {
-        $('#iotop').html(response);
+        $('#iotopdata').html(response);
     });
 }
 
