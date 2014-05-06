@@ -19,7 +19,7 @@ $(document).ready(function () {
 
 function get_watchedshows() {
     $.get(WEBDIR + 'services/outputwatchedplex', function (response) {
-        $('#watchedshows').html(response);
+        $('#watched').html(response);
     });
 }
 
