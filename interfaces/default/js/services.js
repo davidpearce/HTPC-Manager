@@ -37,9 +37,9 @@ function reloadtab() {
     }
 }
 
-$('#watched').click(function () {
+$('#watchedl').click(function () {
     get_watchedshows();
 });
-$('#iotop').click(function () {
+$('#iotopl').click(function () {
     get_iotop();
 });
