@@ -22,15 +22,15 @@ function get_watchedshows() {
     $('.spinner').show();
     $.get(WEBDIR + 'services/outputwatchedplex', function (response) {
         $('#watcheddata').html(response);
-        $('.spinner').hide();
     });
+    $('.spinner').hide();
 }
 
 function get_iotop() {
     $.get(WEBDIR + 'services/getiotop', function (response) {
         $('#iotopdata').html(response);
-        $('.spinner').hide();
     });
+    $('.spinner').hide();
 }
 
 function reloadtab() {
